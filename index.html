@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Creature Search App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+                <svg class="flame-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12,23c-4.97,0-9-4.03-9-9c0-4.63,3.04-7.43,5-9c0,0,1.47,1.13,2,2c0.53-0.87,2-2,2-2c0,1.3-0.47,2.34-1,3 c1.24-0.01,2-1,2-1c0,2-1,3.5-2,5c1,0,1.89-0.5,2-1c0,1.5-0.29,4.73-2,7c3.24-0.31,5-3.4,5-6c0-2.21-1.79-4-4-4 c-0.47,0-0.91,0.09-1.33,0.24C9.86,10.75,9,12.29,9,14c0,2.21,1.79,4,4,4c0.06,0,0.12-0.01,0.17-0.01 c-0.64,0.71-1.68,1.01-2.54,1.01c-2.76,0-5-2.24-5-5c0-2.5,1.93-4.58,4.39-4.82C10.12,6.04,5,8.47,5,14c0,4.18,3.32,7.5,7.5,7.5 c2.32,0,4.42-1.02,5.82-2.66C18.09,20.34,15.2,23,12,23z"/>
+                </svg>
+            <h1>RPG Creature Search App</h1>
+        </header>
+        
+        <main>
+            <div class="search-card">
+                <div class="search-container">
+                    <h2>Search for Creature Name or ID:</h2>
+                    <div class="search-input-container">
+                        <input type="text" id="search-input" placeholder="Enter creature name or ID..." required>
+                        <button id="search-button" class="btn-primary">Search</button>
+                        <button id="clear-button" class="btn-secondary">Clear</button>
+                    </div>
+                </div>
+                
+                <div id="creature-info-area" class="creature-info hidden">
+                    <h2 id="creature-name" class="creature-name-display"></h2> 
+                    <p class="creature-metrics">ID: <span id="creature-id" class="creature-id-display"></span></p>
+                    <p id="weight" class="creature-metrics"></p> 
+                    <p id="height" class="creature-metrics"></p> 
+                    <div id="types" class="type-container"></div> 
+                    <div id="special-ability-display" class="special-ability">
+                        </div>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stats-grid">
+                        <div class="stat-header">Base</div>
+                        <div class="stat-header">Stats</div>
+                        
+                        <div class="stat-label">HP:</div>
+                        <div id="hp" class="stat-value"></div>
+                        
+                        <div class="stat-label">Attack:</div>
+                        <div id="attack" class="stat-value"></div>
+                        
+                        <div class="stat-label">Defense:</div>
+                        <div id="defense" class="stat-value"></div>
+                        
+                        <div class="stat-label">Sp. Attack:</div>
+                        <div id="sp-attack" class="stat-value"></div>
+                        
+                        <div class="stat-label">Sp. Defense:</div>
+                        <div id="sp-defense" class="stat-value"></div>
+                        
+                        <div class="stat-label">Speed:</div>
+                        <div id="speed" class="stat-value"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 RPG Creature Search App. All rights reserved.</p>
+            <p>Created for the last Project of freeCodeCamp by Davronbek Imomov.</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

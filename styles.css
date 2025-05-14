@@ -1,0 +1,351 @@
+:root {
+    --primary-color: #8a4baf;
+    --primary-light: #9b59b6;
+    --primary-dark: #673ab7;
+    --secondary-color: #2c3e50; /* Used for Clear button hover background */
+    --bg-color: #1a1a2e;
+    --card-bg: #f8f9fa;
+    --text-color: #333;
+    --text-light: #666; /* Used for Clear button background */
+    --text-dark: #0a0a0a;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center if content is short */
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px; /* Adjusted for a more compact view similar to original screenshot */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.flame-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+}
+
+.search-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.search-container {
+    margin-bottom: 25px;
+}
+
+.search-container h2 { /* Target h2 within search-container */
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.search-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(138, 75, 175, 0.2);
+}
+
+/* Styles for .btn-primary (Search button) */
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(138, 75, 175, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* NEW: Styles for .btn-secondary (Clear button) */
+.btn-secondary {
+    background: var(--text-light); /* Grey background */
+    color: white; /* White text as per maintained style */
+    border: none;
+    padding: 12px 25px; /* Consistent padding with btn-primary */
+    border-radius: var(--border-radius); /* Consistent border-radius */
+    font-size: 16px; /* Consistent font-size */
+    font-weight: 500; /* Consistent font-weight */
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase; /* Consistent text-transform */
+    letter-spacing: 0.5px; /* Consistent letter-spacing */
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-color); /* Darker grey on hover */
+    transform: translateY(-2px); /* Consistent hover effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Neutral shadow */
+}
+
+.btn-secondary:active {
+    background: var(--secondary-color); /* Consistent active state */
+    transform: translateY(0);
+}
+
+
+/* Creature Info Display Area (replaces old #search-results) */
+/* This is the container for creature details, styled as per original creature card */
+.creature-info {
+   padding: 20px;
+   background-color: #f8f9fa; /* Matches original card-bg or a light variant */
+   border-radius: var(--border-radius);
+   margin-top: 20px; /* Space above the creature info */
+   margin-bottom: 20px; /* Space below the creature info */
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Consistent shadow */
+}
+
+.creature-info.hidden {
+    display: none;
+}
+
+/* Styling for the H2 that will contain creature's name */
+.creature-name-display { /* Renamed to avoid conflict if user had .creature-name class elsewhere */
+   font-size: 28px;
+   font-weight: 700;
+   margin-bottom: 8px;
+   color: #333; /* var(--text-color) */
+}
+
+/* Styling for the span that will contain creature's ID */
+.creature-id-display { /* Renamed for clarity */
+   color: #666; /* var(--text-light) */
+   font-weight: 500;
+}
+
+.creature-metrics {
+   font-size: 16px;
+   margin-bottom: 15px;
+   color: #444;
+}
+.creature-metrics strong { /* If you use <strong> inside these p tags */
+    font-weight: 600;
+}
+
+
+/* Type Bubbles */
+.type-container {
+   display: flex;
+   flex-wrap: wrap; /* Allow bubbles to wrap */
+   gap: 10px;
+   margin-bottom: 20px;
+}
+
+.type-bubble {
+   padding: 8px 15px;
+   border-radius: 20px; /* Pill shape */
+   font-weight: 600;
+   font-size: 14px;
+   color: white;
+   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   text-transform: uppercase;
+}
+
+/* Type-specific colors (from original CSS) */
+.ground { background-color: #e0c068; }
+.flying { background-color: #a890f0; }
+.water { background-color: #6890f0; }
+.fire { background-color: #f08030; }
+.grass { background-color: #78c850; }
+.electric { background-color: #f8d030; color: #333; }
+.ice { background-color: #98d8d8; }
+.rock { background-color: #b8a038; }
+.dragon { background-color: #7038f8; }
+/* Adding other common types for completeness, if API returns them */
+.poison { background-color: #a040a0; }
+.psychic { background-color: #f85888; }
+.bug { background-color: #a8b820; }
+.normal { background-color: #a8a878; }
+.ghost { background-color: #705898; }
+.steel { background-color: #b8b8d0; }
+.fairy { background-color: #ee99ac; }
+.dark { background-color: #705848; }
+.fighting { background-color: #c03028;}
+
+
+/* Special Ability Section */
+.special-ability {
+   margin-top: 15px;
+   padding: 15px;
+   background-color: rgba(138, 75, 175, 0.05); /* Light purple tint */
+   border-radius: 10px;
+   border-left: 4px solid var(--primary-color); /* Accent border */
+}
+
+.special-ability .ability-name { /* Targeting h3 if dynamically added */
+   font-size: 22px;
+   color: var(--primary-color);
+   margin-bottom: 8px;
+}
+
+.special-ability .ability-desc { /* Targeting p if dynamically added */
+   color: #333; /* var(--text-color) */
+   font-size: 15px;
+   line-height: 1.5;
+}
+
+/* Stats Container & Grid */
+.stats-container {
+    margin-top: 20px; 
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 12px; /* Gap between grid items */
+}
+
+.stat-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.stat-label {
+    background-color: var(--primary-light);
+    color: white;
+    padding: 10px;
+    text-align: right;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.stat-value {
+    background-color: white; /* var(--card-bg) or plain white */
+    padding: 10px;
+    text-align: center; /* Or left, depending on preference */
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    border: 1px solid #eee; /* Light border */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* Responsive Styles from original CSS */
+@media (max-width: 768px) {
+    .search-input-container {
+        flex-direction: column;
+    }
+    
+    #search-input, .btn-primary, .btn-secondary { /* Added .btn-secondary here */
+        width: 100%;
+    }
+    
+    .search-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    .search-container h2 { /* Target h2 within search-container */
+        font-size: 18px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr; /* Stack stats on very small screens */
+    }
+    .stat-label {
+        text-align: left;
+    }
+    .stat-value {
+        text-align: left;
+    }
+}

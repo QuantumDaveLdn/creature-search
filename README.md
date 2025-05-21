@@ -9,6 +9,10 @@ I've just completed the JavaScript Algorithms and Data Structures certification 
 
 ![20250514_1311_Comic Certificate Celebration_remix_01jv7b7429fryvxq4y52xpa2qw](https://github.com/user-attachments/assets/1094e929-0c0e-4a2d-970f-d46b2bc671c8)
 
+Link for the certification: https://www.freecodecamp.org/certification/QuantumDaveLdn/javascript-algorithms-and-data-structures-v8
+
+---
+
 Even though I completed my Computer Science degree last year where I tackled advanced concepts, completing this certification felt even more rewarding. During my university days, I never felt quite as satisfied with my learning as I do now. I can proudly say I've established a solid foundation in JavaScript. The practical, hands-on approach of building real projects whilst learning has given me a sense of accomplishment that theoretical studies alone never provided.
 
 My path forward is clear: I'll continue building full-stack web applications to strengthen my JavaScript skills whilst expanding into Node.js and backend development. However, my ultimate goal is to master AI engineering and development. I'm setting my sights on an AI engineering position within the next 8 months, and with the discipline and skills I've now developed, I believe this is absolutely achievable.
